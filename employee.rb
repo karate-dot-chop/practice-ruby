@@ -23,6 +23,10 @@
 # Represent an employee as a class instance
 class Employee
 
+  # attr_reader :first_name, :last_name, :active
+  # attr_writer :active, :last_name
+  attr_accessor :first_name, :last_name, :active
+
   def initialize(first_name, last_name, salary, active)
     @first_name = first_name
     @last_name = last_name
@@ -32,24 +36,6 @@ class Employee
 
   def print_info
     puts "#{first_name} #{last_name} makes #{@salary} a year."
-  end
-
-  # getter/reader
-  def first_name
-    @first_name
-  end
-
-  def last_name
-    @last_name
-  end
-
-  def active
-    @active
-  end
-
-  # setter/writer
-  def active=(input_active)
-    @active = input_active
   end
 
   # instance method
@@ -69,3 +55,5 @@ puts employee1.active
 puts employee1.give_annual_raise
 employee1.active = false
 puts employee1.active
+employee1.last_name = "Something Else"
+puts employee1.last_name
