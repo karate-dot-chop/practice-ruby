@@ -20,6 +20,15 @@ class Employee
 end
 
 class Manager < Employee
+  def initialize options_hash
+    super
+    @employees = options_hash[:employees]
+  end
+
+  def employees
+    @employees
+  end
+  
   def send_report
     puts "Sending important email..."
     #use some fancy email sending library
@@ -32,6 +41,7 @@ employee2 = Employee.new(first_name: "Peter", last_name: "Jang", salary: 20000, 
 employee1.print_info
 employee2.print_info
 
-manager = Manager.new(first_name: "Winston", last_name: "Barbe", salary: 120000, active: true)
+manager = Manager.new(first_name: "Winston", last_name: "Barbe", salary: 120000, active: true, employees: [employee1, employee2])
 manager.print_info
 manager.send_report
+p manager.employees
