@@ -27,7 +27,7 @@ class Employee
   # attr_writer :active, :last_name
   attr_accessor :first_name, :last_name, :active
 
-  def initialize(options_hash)
+  def initialize options_hash
     @first_name = options_hash[:first_name]
     @last_name = options_hash[:last_name]
     @salary = options_hash[:salary]
@@ -45,8 +45,8 @@ class Employee
 
 end
 
-employee1 = Employee.new({:first_name => "Jay", :last_name => "Wengrow", :salary => 1000000, :active => true})
-employee2 = Employee.new({:first_name => "Peter", :last_name => "Jang", :salary => 20000, :active => true})
+employee1 = Employee.new({first_name: "Jay", last_name: "Wengrow", salary: 1000000, active: true})
+employee2 = Employee.new(first_name: "Peter", last_name: "Jang", salary: 20000, active: true)
 # employee1.print_info
 # employee2.print_info
 puts employee1.first_name
@@ -57,3 +57,4 @@ employee1.active = false
 puts employee1.active
 employee1.last_name = "Something Else"
 puts employee1.last_name
+puts employee2.first_name
