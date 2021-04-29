@@ -1,5 +1,4 @@
 class Employee
-
   attr_accessor :first_name, :last_name, :active
 
   def initialize options_hash
@@ -16,19 +15,16 @@ class Employee
   def give_annual_raise
     @salary = 1.05 * @salary
   end
-
 end
 
 class Manager < Employee
+  attr_accessor :employees
+
   def initialize options_hash
     super
     @employees = options_hash[:employees]
   end
 
-  def employees
-    @employees
-  end
-  
   def send_report
     puts "Sending important email..."
     #use some fancy email sending library
