@@ -21,26 +21,28 @@
 # StoreItem Pascal
 
 # Represent an employee as a class instance
-class Employee
+module Actualize
+  class Employee
 
-  # attr_reader :first_name, :last_name, :active
-  # attr_writer :active, :last_name
-  attr_accessor :first_name, :last_name, :active
+    # attr_reader :first_name, :last_name, :active
+    # attr_writer :active, :last_name
+    attr_accessor :first_name, :last_name, :active
 
-  def initialize options_hash
-    @first_name = options_hash[:first_name]
-    @last_name = options_hash[:last_name]
-    @salary = options_hash[:salary]
-    @active = options_hash[:active]
+    def initialize options_hash
+      @first_name = options_hash[:first_name]
+      @last_name = options_hash[:last_name]
+      @salary = options_hash[:salary]
+      @active = options_hash[:active]
+    end
+
+    def print_info
+      puts "#{first_name} #{last_name} makes #{@salary} a year."
+    end
+
+    # instance method
+    def give_annual_raise
+      @salary = 1.05 * @salary
+    end
+
   end
-
-  def print_info
-    puts "#{first_name} #{last_name} makes #{@salary} a year."
-  end
-
-  # instance method
-  def give_annual_raise
-    @salary = 1.05 * @salary
-  end
-
 end
